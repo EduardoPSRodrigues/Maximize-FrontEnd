@@ -9,13 +9,14 @@
               <img class="logo-image mt-4" src="../views/images/logo3.svg" :width="260"/>
             </router-link>
           </v-toolbar-title>
-          <router-link to="listnews">
+          <router-link to="/listnews">
             <v-btn 
               class="menu-button text-uppercase font-weight-bold text-brown-darken-3 xs-" 
               variant="flat" 
               color="orange-darken-1" 
               rounded="xl" 
               size="large"
+              @click="redirectToListNews()" 
             >
               IR PARA O BLOG
             </v-btn>
@@ -55,6 +56,11 @@
       group () {
         this.drawer = false
       },
+    },
+    methods: {
+      redirectToListNews() {
+       this.$router.push(`/listnews/`)
+    }
     },
   }
 </script>
